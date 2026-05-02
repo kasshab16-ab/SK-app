@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SK Shifon App</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        // 1. የFirebase መረጃህ (ይህ እንዳይቀየር)
+        const firebaseConfig = {
+          apiKey: "AIzaSyD-PRoRFT0UkjH0xYjTDmSvHOM8wRKHhco",
+          authDomain: "sk-app-6df68.firebaseapp.com",
+          projectId: "sk-app-6df68",
+          storageBucket: "sk-app-6df68.firebasestorage.app",
+          messagingSenderId: "1026792805000",
+          appId: "1:1026792805000:web:ed93145cca49265f1a453d"
+        };
+
+        // Firebase-ን ማስጀመር
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // 2. የአፑ መልክ (ዲዛይን)
+        const App = () => {
+            return (
+                <div style={{background: '#0a0a0a', color: '#dfb06a', minHeight: '100vh', padding: '20px', textAlign: 'center'}}>
+                    <h1 style={{borderBottom: '2px solid #dfb06a'}}>SK SHIFON</h1>
+                    <p>እንኳን ወደ SK አፕ በሰላም መጡ!</p>
+                    <div style={{marginTop: '50px', padding: '20px', border: '1px solid #444', borderRadius: '10px'}}>
+                        <h3>ይህ የእርስዎ አፕ የመጀመሪያ ገጽ ነው</h3>
+                        <p>አሁን አፑ ስራ ጀምሯል። በቀጣይ ምርቶችን እዚህ እናስገባለን።</p>
+                    </div>
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
